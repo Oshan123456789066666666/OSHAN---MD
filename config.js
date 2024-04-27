@@ -42,11 +42,11 @@ module.exports = {
   //_________________________________________________________________________________________________________________________________
   GOODBYE_MSG: process.env.GOODBYE_MSG || "👋 GoodBye *@user* From *@gname*\n*Total Members:* @count {pp}",
   //_________________________________________________________________________________________________________________________________
-  DATABASE_URL: DATABASE_URL,
+  DATABASE_URL:./lib/database.db
+  //______________________________________________________________________________________________________________
+  HEROKU_APP_NAME: process.env.HEROKU_APP_NAME || "oshan sulakshana",
   //_________________________________________________________________________________________________________________________________
-  HEROKU_APP_NAME: process.env.HEROKU_APP_NAME || "oshadiupeka2@gamil.com ",
-  //_________________________________________________________________________________________________________________________________
-  HEROKU_API_KEY: process.env.HEROKU_API_KEY || " ",
+  HEROKU_API_KEY: process.env.HEROKU_API_KEY || "675 ",
   //_________________________________________________________________________________________________________________________________
   OWNER_NAME: process.env.OWNER_NAME || "oshan sulakshana",
   //_________________________________________________________________________________________________________________________________
@@ -66,7 +66,7 @@ module.exports = {
       ? new Sequelize({
           dialect: "sqlite",
           storage: DATABASE_URL,
-          logging: false,
+          logging: true,
         })
       : new Sequelize(DATABASE_URL, {
           dialect: "postgres",
